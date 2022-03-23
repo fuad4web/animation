@@ -1,0 +1,223 @@
+/* Just about CSS */
+body {
+    position: relative;
+    background-color: yellowgreen;
+    line-height: 3rem;
+}
+button {
+    display: block;
+    width: 500px;
+    margin: 40px auto;
+    padding: 0;
+
+    color: brown;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+
+    border: 2px solid #171717;
+
+    background-image: linear-gradient(to right, #171717 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    
+
+    opacity: 0;
+    animation: fadeIn 1.5s linear 2.5s forwards;
+}
+button:hover {
+    color: chocolate;
+    background-position: 0 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 10);
+}
+
+.navbar > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+li {
+    flex-basis: 10%;
+    border: 2px solid blue;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+li:hover {
+    margin-left: 25px;
+    margin-top: 25px;
+    color: red;
+    background-color: antiquewhite;
+}
+
+/*Word typing itself*/
+#animate {
+    animation: type 30s steps(77);
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    border-right: 1px solid black;
+    width: 77ch;
+}
+@keyframes type {
+    0% {
+        width:0ch;
+    }
+    100% {
+        /*We will be using the number of length of the words we wanna use e.g fuad.length*/
+        width: 77ch;
+    }
+}
+ol li a {
+    text-decoration: none;
+}
+ol li a:link {
+    color: violet;
+}
+ol li a:visited {
+    font-size: 2rem;
+    font-weight: normal;
+    color:purple;
+    text-decoration: none;
+} 
+ol li a:focus {
+    color: greenyellow;
+    background-color: crimson;
+}
+ol li a:hover {
+    font-size: 3rem;
+    font-weight: normal;
+    color:pink;
+    background-color: purple;
+    text-decoration: none;
+}
+ol li a:active {
+    color: green;
+    border: 3px dotted whitesmoke;
+}
+h1, h2 {
+    position: relative;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: blue;
+    border: 5px solid coral;
+    border-radius: 3rem;
+
+    left: -100%;
+    animation: slideIn 0.5s 0.5s forwards cubic-bezier(.5, .5, .5, 1.5);
+}
+@keyframes slideIn {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+p{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: saddlebrown;
+}
+ol {
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: tomato;
+}
+.trial {
+    color: saddlebrown;
+    font-size: 30px;
+    top: -100%;
+    
+    animation: fadeIn 5s linear 1s forwards;
+}
+/*   not working
+@keyframes fallIn {
+    from { top: -100%; }
+    to {top: 0%; }
+}
+*/
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*glowing*/
+#glowing {
+    font-size: 6rem;
+    font-family: 'Bad Script', cursive;
+    display: flex;
+}
+#glowing > span {
+    display: table-cell;
+    color: green;
+    animation: animate 2s linear infinite;
+    animation-name: glowing;
+    text-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff,
+                0 0 40px #00b3ff,
+                0 0 80px #00b3ff,
+                0 0 120px #00b3ff,
+                0 0 200px #00b3ff,
+                0 0 300px #00b3ff,
+                0 0 400px #00b3ff;
+}
+#glowing > span:nth-child(1){
+    animation-delay: 0s;
+}
+#glowing > span:nth-child(2){
+    animation-delay: 0.25s;
+}
+#glowing > span:nth-child(3){
+    animation-delay: 0s;
+}
+#glowing > span:nth-child(4){
+    animation-delay: 0.5s;
+}
+#glowing > span:nth-child(5){
+    animation-delay: 0.75s;
+}
+#glowing > span:nth-child(6){
+    animation-delay: 1s;
+}
+#glowing > span:nth-child(7){
+    animation-delay: 1.25s;
+}
+#glowing > span:nth-child(8){
+    animation-delay: 1.5s;
+}
+@keyframes glowing {
+    0%, 100% {
+        color: #fff;
+        filter: blur(2px);
+    }
+    5%, 95% {
+        color: #111;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    animation-name: myanimation;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; /*it can be set to any preffered number also*/
+}
+@keyframes myanimation {
+    0% {background-color: white; left: 0px; top: 0px; border-radius: 0 0 0 0;}
+    25% {background-color: red; left: 700px; top: 0px; border-radius: 50% 0 0 0; transform: rotateZ(180);}
+    50% {background-color: blue; left: 700px; top: 300px; border-radius: 50% 50% 0 0; transform: rotateY(270deg);}
+    75% {background-color: yellow; left: 0px; top: 300px; border-radius: 50% 50% 50% 0; transform: rotateY(360deg);}
+    100% {background-color: whitesmoke; left: 0px; top: 0px; border-radius: 50% 50% 50% 50%;}
+}

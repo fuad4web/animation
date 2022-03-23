@@ -1,0 +1,29 @@
+#distortion {
+    position: relative;
+    font-weight: 300;
+    font-size: 1.5em;
+    z-index: 1;
+    overflow: hidden;
+    color: rgb(243, 243, 14);
+}
+#distortion::before {
+    content: '';
+    position: absolute;
+    left: 110%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgb(110, 218, 110) 35%, rgb(224, 125, 125) 110%);
+    animation: animate 4.5s linear forwards;
+    animation-fill-mode: backwards;
+}
+@keyframes animate {
+    0% {
+           left: 110%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+span {
+    color: purple;
+}
